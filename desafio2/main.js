@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt')
 const app = express()
 const PORT = 3000
 const secretKey = 'seuSegredo'
-const tokenExpiry = '30m';
+const tokenExpiry = '30m'
 
 const users = []
 
@@ -60,11 +60,11 @@ function verificarToken(req, res, next) {
       return res.status(401).json({ mensagem: 'Sessão inválida' })
     }
 
-    req.user = decoded;
+    req.user = decoded
     next()
   })
 }
 
 app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
+  console.log(`Servidor rodando em http://localhost:${PORT}`)
 })
